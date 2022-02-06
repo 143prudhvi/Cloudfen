@@ -1,0 +1,91 @@
+enum GenderType {
+  MALE
+  FEMALE
+  OTHERS
+}
+
+enum CategoryType {
+  REGULARCAP
+  MASTERCAP
+}
+
+enum MaritalStatus{
+	Married
+    Engaged
+    Single
+    Seperated
+    Divorced
+    Widowed
+}
+
+entity LoginProfile{
+   userName String
+   userId String
+   memberId String
+   phoneNumber String
+   emailId String
+   password String
+   status String
+   activationCode String
+}
+
+entity BioProfile {
+   userName String
+   userId String
+   memberId String
+   firstName String 
+   lastName String
+   dob String
+   gender String
+   imageUrl TextBlob
+   title String
+   summary TextBlob
+}
+
+entity H1B{
+	userId String
+    usserName String
+	firstName String
+    middleName String
+    lastName String
+    dateOfBirth Instant
+    countryOfBirth String
+    countryOfCitizenShip String
+    passportNumber String
+    gender GenderType
+    category CategoryType
+    email String
+    currentAddress String
+    phoneNumber String
+    bachelorDegree String
+    year String
+    currentVisaStatus String
+    status String
+    referedBy String
+    passportFrontPage TextBlob
+    passportBackPage TextBlob
+}
+
+
+entity BachelorDegree{
+	course String
+}
+
+entity FileDetails{
+	userId String
+	userName String
+    type String
+	fileName String
+}
+
+filter LoginProfile, BioProfile, H1B, FileDetails
+
+paginate LoginProfile with infinite-scroll
+paginate LoginProfile with pagination
+
+paginate H1B with infinite-scroll
+paginate H1B with pagination
+
+
+// Set service options to all except few
+service all with serviceImpl
