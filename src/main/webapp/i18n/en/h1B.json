@@ -1,0 +1,44 @@
+{
+  "cloudfenApp": {
+    "h1B": {
+      "home": {
+        "title": "H 1 BS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new H 1 B",
+        "createOrEditLabel": "Create or edit a H 1 B",
+        "notFound": "No H 1 BS found"
+      },
+      "created": "A new H 1 B is created with identifier {{ param }}",
+      "updated": "A H 1 B is updated with identifier {{ param }}",
+      "deleted": "A H 1 B is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete H 1 B {{ id }}?"
+      },
+      "detail": {
+        "title": "H 1 B"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "usserName": "Usser Name",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "dateOfBirth": "Date Of Birth",
+      "countryOfBirth": "Country Of Birth",
+      "countryOfCitizenShip": "Country Of Citizen Ship",
+      "passportNumber": "Passport Number",
+      "gender": "Gender",
+      "category": "Category",
+      "email": "Email",
+      "currentAddress": "Current Address",
+      "phoneNumber": "Phone Number",
+      "bachelorDegree": "Bachelor Degree",
+      "year": "Year",
+      "currentVisaStatus": "Current Visa Status",
+      "status": "Status",
+      "referedBy": "Refered By",
+      "passportFrontPage": "Passport Front Page",
+      "passportBackPage": "Passport Back Page"
+    }
+  }
+}

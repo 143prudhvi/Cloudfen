@@ -1,0 +1,158 @@
+<div>
+  <h2 id="page-heading" data-cy="H1BHeading">
+    <span jhiTranslate="cloudfenApp.h1B.home.title">H 1 BS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cloudfenApp.h1B.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-h-1-b"
+        [routerLink]="['/h-1-b/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cloudfenApp.h1B.home.createLabel"> Create a new H 1 B </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="h1BS?.length === 0">
+    <span jhiTranslate="cloudfenApp.h1B.home.notFound">No h1BS found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="h1BS && h1BS.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="userId"><span jhiTranslate="cloudfenApp.h1B.userId">User Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="usserName">
+            <span jhiTranslate="cloudfenApp.h1B.usserName">Usser Name</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="firstName">
+            <span jhiTranslate="cloudfenApp.h1B.firstName">First Name</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="middleName">
+            <span jhiTranslate="cloudfenApp.h1B.middleName">Middle Name</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="lastName">
+            <span jhiTranslate="cloudfenApp.h1B.lastName">Last Name</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="dateOfBirth">
+            <span jhiTranslate="cloudfenApp.h1B.dateOfBirth">Date Of Birth</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryOfBirth">
+            <span jhiTranslate="cloudfenApp.h1B.countryOfBirth">Country Of Birth</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryOfCitizenShip">
+            <span jhiTranslate="cloudfenApp.h1B.countryOfCitizenShip">Country Of Citizen Ship</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="passportNumber">
+            <span jhiTranslate="cloudfenApp.h1B.passportNumber">Passport Number</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gender"><span jhiTranslate="cloudfenApp.h1B.gender">Gender</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="category">
+            <span jhiTranslate="cloudfenApp.h1B.category">Category</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="email"><span jhiTranslate="cloudfenApp.h1B.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="currentAddress">
+            <span jhiTranslate="cloudfenApp.h1B.currentAddress">Current Address</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phoneNumber">
+            <span jhiTranslate="cloudfenApp.h1B.phoneNumber">Phone Number</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bachelorDegree">
+            <span jhiTranslate="cloudfenApp.h1B.bachelorDegree">Bachelor Degree</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="year"><span jhiTranslate="cloudfenApp.h1B.year">Year</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="currentVisaStatus">
+            <span jhiTranslate="cloudfenApp.h1B.currentVisaStatus">Current Visa Status</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="status"><span jhiTranslate="cloudfenApp.h1B.status">Status</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="referedBy">
+            <span jhiTranslate="cloudfenApp.h1B.referedBy">Refered By</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="passportFrontPage">
+            <span jhiTranslate="cloudfenApp.h1B.passportFrontPage">Passport Front Page</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="passportBackPage">
+            <span jhiTranslate="cloudfenApp.h1B.passportBackPage">Passport Back Page</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let h1B of h1BS; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/h-1-b', h1B.id, 'view']">{{ h1B.id }}</a>
+          </td>
+          <td>{{ h1B.userId }}</td>
+          <td>{{ h1B.usserName }}</td>
+          <td>{{ h1B.firstName }}</td>
+          <td>{{ h1B.middleName }}</td>
+          <td>{{ h1B.lastName }}</td>
+          <td>{{ h1B.dateOfBirth | formatMediumDatetime }}</td>
+          <td>{{ h1B.countryOfBirth }}</td>
+          <td>{{ h1B.countryOfCitizenShip }}</td>
+          <td>{{ h1B.passportNumber }}</td>
+          <td jhiTranslate="{{ 'cloudfenApp.GenderType.' + h1B.gender }}">{{ h1B.gender }}</td>
+          <td jhiTranslate="{{ 'cloudfenApp.CategoryType.' + h1B.category }}">{{ h1B.category }}</td>
+          <td>{{ h1B.email }}</td>
+          <td>{{ h1B.currentAddress }}</td>
+          <td>{{ h1B.phoneNumber }}</td>
+          <td>{{ h1B.bachelorDegree }}</td>
+          <td>{{ h1B.year }}</td>
+          <td>{{ h1B.currentVisaStatus }}</td>
+          <td>{{ h1B.status }}</td>
+          <td>{{ h1B.referedBy }}</td>
+          <td>{{ h1B.passportFrontPage }}</td>
+          <td>{{ h1B.passportBackPage }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/h-1-b', h1B.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/h-1-b', h1B.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(h1B)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="h1BS && h1BS.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

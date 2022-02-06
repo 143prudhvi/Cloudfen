@@ -1,0 +1,24 @@
+{
+  "cloudfenApp": {
+    "bachelorDegree": {
+      "home": {
+        "title": "Bachelor Degrees",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bachelor Degree",
+        "createOrEditLabel": "Create or edit a Bachelor Degree",
+        "notFound": "No Bachelor Degrees found"
+      },
+      "created": "A new Bachelor Degree is created with identifier {{ param }}",
+      "updated": "A Bachelor Degree is updated with identifier {{ param }}",
+      "deleted": "A Bachelor Degree is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bachelor Degree {{ id }}?"
+      },
+      "detail": {
+        "title": "Bachelor Degree"
+      },
+      "id": "ID",
+      "course": "Course"
+    }
+  }
+}
