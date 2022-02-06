@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="h1B">
+      <h2 data-cy="h1BDetailsHeading"><span jhiTranslate="cloudfenApp.h1B.detail.title">H 1 B</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ h1B.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.userId">User Id</span></dt>
+        <dd>
+          <span>{{ h1B.userId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ h1B.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.middleName">Middle Name</span></dt>
+        <dd>
+          <span>{{ h1B.middleName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ h1B.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+          <span>{{ h1B.dateOfBirth | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.countryOfBirth">Country Of Birth</span></dt>
+        <dd>
+          <span>{{ h1B.countryOfBirth }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.countryOfCitizenShip">Country Of Citizen Ship</span></dt>
+        <dd>
+          <span>{{ h1B.countryOfCitizenShip }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.passportNumber">Passport Number</span></dt>
+        <dd>
+          <span>{{ h1B.passportNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.gender">Gender</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cloudfenApp.GenderType.' + h1B.gender }}">{{ h1B.gender }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.category">Category</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cloudfenApp.CategoryType.' + h1B.category }}">{{ h1B.category }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.email">Email</span></dt>
+        <dd>
+          <span>{{ h1B.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.currentAddress">Current Address</span></dt>
+        <dd>
+          <span>{{ h1B.currentAddress }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ h1B.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.bachelorDegree">Bachelor Degree</span></dt>
+        <dd>
+          <span>{{ h1B.bachelorDegree }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.year">Year</span></dt>
+        <dd>
+          <span>{{ h1B.year }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.currentVisaStatus">Current Visa Status</span></dt>
+        <dd>
+          <span>{{ h1B.currentVisaStatus }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.referedBy">Refered By</span></dt>
+        <dd>
+          <span>{{ h1B.referedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.passportFrontPage">Passport Front Page</span></dt>
+        <dd>
+          <span>{{ h1B.passportFrontPage }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.h1B.passportBackPage">Passport Back Page</span></dt>
+        <dd>
+          <span>{{ h1B.passportBackPage }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/h-1-b', h1B.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
