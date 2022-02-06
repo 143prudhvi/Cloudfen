@@ -1,0 +1,20 @@
+{
+  "applications": "*",
+  "changelogDate": "20220206141615",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "bachelor_degree",
+  "fields": [
+    {
+      "fieldName": "course",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BachelorDegree",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

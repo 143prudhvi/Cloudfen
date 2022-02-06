@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="loginProfile">
+      <h2 data-cy="loginProfileDetailsHeading"><span jhiTranslate="cloudfenApp.loginProfile.detail.title">Login Profile</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ loginProfile.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.userName">User Name</span></dt>
+        <dd>
+          <span>{{ loginProfile.userName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.userId">User Id</span></dt>
+        <dd>
+          <span>{{ loginProfile.userId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.memberId">Member Id</span></dt>
+        <dd>
+          <span>{{ loginProfile.memberId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ loginProfile.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.emailId">Email Id</span></dt>
+        <dd>
+          <span>{{ loginProfile.emailId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.password">Password</span></dt>
+        <dd>
+          <span>{{ loginProfile.password }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.status">Status</span></dt>
+        <dd>
+          <span>{{ loginProfile.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.loginProfile.activationCode">Activation Code</span></dt>
+        <dd>
+          <span>{{ loginProfile.activationCode }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/login-profile', loginProfile.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

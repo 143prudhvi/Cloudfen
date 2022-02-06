@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-bio-profile-heading" data-cy="BioProfileCreateUpdateHeading" jhiTranslate="cloudfenApp.bioProfile.home.createOrEditLabel">
+        Create or edit a Bio Profile
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.userName" for="field_userName">User Name</label>
+          <input type="text" class="form-control" name="userName" id="field_userName" data-cy="userName" formControlName="userName" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.userId" for="field_userId">User Id</label>
+          <input type="text" class="form-control" name="userId" id="field_userId" data-cy="userId" formControlName="userId" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.memberId" for="field_memberId">Member Id</label>
+          <input type="text" class="form-control" name="memberId" id="field_memberId" data-cy="memberId" formControlName="memberId" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.firstName" for="field_firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.lastName" for="field_lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.dob" for="field_dob">Dob</label>
+          <input type="text" class="form-control" name="dob" id="field_dob" data-cy="dob" formControlName="dob" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.gender" for="field_gender">Gender</label>
+          <input type="text" class="form-control" name="gender" id="field_gender" data-cy="gender" formControlName="gender" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.imageUrl" for="field_imageUrl">Image Url</label>
+          <textarea class="form-control" name="imageUrl" id="field_imageUrl" data-cy="imageUrl" formControlName="imageUrl"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.title" for="field_title">Title</label>
+          <input type="text" class="form-control" name="title" id="field_title" data-cy="title" formControlName="title" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.bioProfile.summary" for="field_summary">Summary</label>
+          <textarea class="form-control" name="summary" id="field_summary" data-cy="summary" formControlName="summary"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
