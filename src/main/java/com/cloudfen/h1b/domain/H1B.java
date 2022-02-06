@@ -26,8 +26,8 @@ public class H1B implements Serializable {
     @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "usser_name")
-    private String usserName;
+    @Column(name = "user_name")
+    private String userName;
 
     @Column(name = "first_name")
     private String firstName;
@@ -118,17 +118,17 @@ public class H1B implements Serializable {
         this.userId = userId;
     }
 
-    public String getUsserName() {
-        return this.usserName;
+    public String getUserName() {
+        return this.userName;
     }
 
-    public H1B usserName(String usserName) {
-        this.setUsserName(usserName);
+    public H1B userName(String userName) {
+        this.setUserName(userName);
         return this;
     }
 
-    public void setUsserName(String usserName) {
-        this.usserName = usserName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -403,7 +403,7 @@ public class H1B implements Serializable {
         return "H1B{" +
             "id=" + getId() +
             ", userId='" + getUserId() + "'" +
-            ", usserName='" + getUsserName() + "'" +
+            ", userName='" + getUserName() + "'" +
             ", firstName='" + getFirstName() + "'" +
             ", middleName='" + getMiddleName() + "'" +
             ", lastName='" + getLastName() + "'" +

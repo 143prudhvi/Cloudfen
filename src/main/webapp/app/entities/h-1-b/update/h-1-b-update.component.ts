@@ -28,7 +28,7 @@ export class H1BUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     userId: [],
-    usserName: [],
+    userName: [],
     firstName: [],
     middleName: [],
     lastName: [],
@@ -121,7 +121,7 @@ export class H1BUpdateComponent implements OnInit {
     this.editForm.patchValue({
       id: h1B.id,
       userId: h1B.userId,
-      usserName: h1B.usserName,
+      userName: h1B.userName,
       firstName: h1B.firstName,
       middleName: h1B.middleName,
       lastName: h1B.lastName,
@@ -149,7 +149,7 @@ export class H1BUpdateComponent implements OnInit {
       ...new H1B(),
       id: this.editForm.get(['id'])!.value,
       userId: this.editForm.get(['userId'])!.value,
-      usserName: this.editForm.get(['usserName'])!.value,
+      userName: this.editForm.get(['userName'])!.value,
       firstName: this.editForm.get(['firstName'])!.value,
       middleName: this.editForm.get(['middleName'])!.value,
       lastName: this.editForm.get(['lastName'])!.value,

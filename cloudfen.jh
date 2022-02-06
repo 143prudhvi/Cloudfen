@@ -33,7 +33,7 @@ entity BioProfile {
    userName String
    userId String
    memberId String
-   firstName String 
+   firstName String
    lastName String
    dob String
    gender String
@@ -44,7 +44,7 @@ entity BioProfile {
 
 entity H1B{
 	userId String
-    usserName String
+    userName String
 	firstName String
     middleName String
     lastName String

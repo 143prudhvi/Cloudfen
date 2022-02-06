@@ -88,8 +88,8 @@ public class H1BQueryService extends QueryService<H1B> {
             if (criteria.getUserId() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getUserId(), H1B_.userId));
             }
-            if (criteria.getUsserName() != null) {
-                specification = specification.and(buildStringSpecification(criteria.getUsserName(), H1B_.usserName));
+            if (criteria.getUserName() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getUserName(), H1B_.userName));
             }
             if (criteria.getFirstName() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getFirstName(), H1B_.firstName));

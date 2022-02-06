@@ -65,7 +65,7 @@ public class H1BCriteria implements Serializable, Criteria {
 
     private StringFilter userId;
 
-    private StringFilter usserName;
+    private StringFilter userName;
 
     private StringFilter firstName;
 
@@ -108,7 +108,7 @@ public class H1BCriteria implements Serializable, Criteria {
     public H1BCriteria(H1BCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
         this.userId = other.userId == null ? null : other.userId.copy();
-        this.usserName = other.usserName == null ? null : other.usserName.copy();
+        this.userName = other.userName == null ? null : other.userName.copy();
         this.firstName = other.firstName == null ? null : other.firstName.copy();
         this.middleName = other.middleName == null ? null : other.middleName.copy();
         this.lastName = other.lastName == null ? null : other.lastName.copy();
@@ -164,19 +164,19 @@ public class H1BCriteria implements Serializable, Criteria {
         this.userId = userId;
     }
 
-    public StringFilter getUsserName() {
-        return usserName;
+    public StringFilter getUserName() {
+        return userName;
     }
 
-    public StringFilter usserName() {
-        if (usserName == null) {
-            usserName = new StringFilter();
+    public StringFilter userName() {
+        if (userName == null) {
+            userName = new StringFilter();
         }
-        return usserName;
+        return userName;
     }
 
-    public void setUsserName(StringFilter usserName) {
-        this.usserName = usserName;
+    public void setUserName(StringFilter userName) {
+        this.userName = userName;
     }
 
     public StringFilter getFirstName() {
@@ -454,7 +454,7 @@ public class H1BCriteria implements Serializable, Criteria {
         return (
             Objects.equals(id, that.id) &&
             Objects.equals(userId, that.userId) &&
-            Objects.equals(usserName, that.usserName) &&
+            Objects.equals(userName, that.userName) &&
             Objects.equals(firstName, that.firstName) &&
             Objects.equals(middleName, that.middleName) &&
             Objects.equals(lastName, that.lastName) &&
@@ -481,7 +481,7 @@ public class H1BCriteria implements Serializable, Criteria {
         return Objects.hash(
             id,
             userId,
-            usserName,
+            userName,
             firstName,
             middleName,
             lastName,
@@ -509,7 +509,7 @@ public class H1BCriteria implements Serializable, Criteria {
         return "H1BCriteria{" +
             (id != null ? "id=" + id + ", " : "") +
             (userId != null ? "userId=" + userId + ", " : "") +
-            (usserName != null ? "usserName=" + usserName + ", " : "") +
+            (userName != null ? "userName=" + userName + ", " : "") +
             (firstName != null ? "firstName=" + firstName + ", " : "") +
             (middleName != null ? "middleName=" + middleName + ", " : "") +
             (lastName != null ? "lastName=" + lastName + ", " : "") +

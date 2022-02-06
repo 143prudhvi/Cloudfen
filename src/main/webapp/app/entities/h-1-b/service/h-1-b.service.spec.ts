@@ -28,7 +28,7 @@ describe('H1B Service', () => {
     elemDefault = {
       id: 0,
       userId: 'AAAAAAA',
-      usserName: 'AAAAAAA',
+      userName: 'AAAAAAA',
       firstName: 'AAAAAAA',
       middleName: 'AAAAAAA',
       lastName: 'AAAAAAA',
@@ -95,7 +95,7 @@ describe('H1B Service', () => {
         {
           id: 1,
           userId: 'BBBBBB',
-          usserName: 'BBBBBB',
+          userName: 'BBBBBB',
           firstName: 'BBBBBB',
           middleName: 'BBBBBB',
           lastName: 'BBBBBB',
@@ -137,7 +137,7 @@ describe('H1B Service', () => {
       const patchObject = Object.assign(
         {
           userId: 'BBBBBB',
-          usserName: 'BBBBBB',
+          userName: 'BBBBBB',
           firstName: 'BBBBBB',
           middleName: 'BBBBBB',
           countryOfBirth: 'BBBBBB',
@@ -173,7 +173,7 @@ describe('H1B Service', () => {
         {
           id: 1,
           userId: 'BBBBBB',
-          usserName: 'BBBBBB',
+          userName: 'BBBBBB',
           firstName: 'BBBBBB',
           middleName: 'BBBBBB',
           lastName: 'BBBBBB',

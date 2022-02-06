@@ -34,8 +34,8 @@
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
           <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="userId"><span jhiTranslate="cloudfenApp.h1B.userId">User Id</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="usserName">
-            <span jhiTranslate="cloudfenApp.h1B.usserName">Usser Name</span> <fa-icon icon="sort"></fa-icon>
+          <th scope="col" jhiSortBy="userName">
+            <span jhiTranslate="cloudfenApp.h1B.userName">User Name</span> <fa-icon icon="sort"></fa-icon>
           </th>
           <th scope="col" jhiSortBy="firstName">
             <span jhiTranslate="cloudfenApp.h1B.firstName">First Name</span> <fa-icon icon="sort"></fa-icon>
@@ -95,7 +95,7 @@
             <a [routerLink]="['/h-1-b', h1B.id, 'view']">{{ h1B.id }}</a>
           </td>
           <td>{{ h1B.userId }}</td>
-          <td>{{ h1B.usserName }}</td>
+          <td>{{ h1B.userName }}</td>
           <td>{{ h1B.firstName }}</td>
           <td>{{ h1B.middleName }}</td>
           <td>{{ h1B.lastName }}</td>

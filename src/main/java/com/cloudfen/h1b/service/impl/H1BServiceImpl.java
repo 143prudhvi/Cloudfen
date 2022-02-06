@@ -42,8 +42,8 @@ public class H1BServiceImpl implements H1BService {
                 if (h1B.getUserId() != null) {
                     existingH1B.setUserId(h1B.getUserId());
                 }
-                if (h1B.getUsserName() != null) {
-                    existingH1B.setUsserName(h1B.getUsserName());
+                if (h1B.getUserName() != null) {
+                    existingH1B.setUserName(h1B.getUserName());
                 }
                 if (h1B.getFirstName() != null) {
                     existingH1B.setFirstName(h1B.getFirstName());

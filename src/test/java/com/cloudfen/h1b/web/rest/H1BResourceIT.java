@@ -38,8 +38,8 @@ class H1BResourceIT {
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
-    private static final String DEFAULT_USSER_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_USSER_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_USER_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_USER_NAME = "BBBBBBBBBB";
 
     private static final String DEFAULT_FIRST_NAME = "AAAAAAAAAA";
     private static final String UPDATED_FIRST_NAME = "BBBBBBBBBB";
@@ -124,7 +124,7 @@ class H1BResourceIT {
     public static H1B createEntity(EntityManager em) {
         H1B h1B = new H1B()
             .userId(DEFAULT_USER_ID)
-            .usserName(DEFAULT_USSER_NAME)
+            .userName(DEFAULT_USER_NAME)
             .firstName(DEFAULT_FIRST_NAME)
             .middleName(DEFAULT_MIDDLE_NAME)
             .lastName(DEFAULT_LAST_NAME)
@@ -156,7 +156,7 @@ class H1BResourceIT {
     public static H1B createUpdatedEntity(EntityManager em) {
         H1B h1B = new H1B()
             .userId(UPDATED_USER_ID)
-            .usserName(UPDATED_USSER_NAME)
+            .userName(UPDATED_USER_NAME)
             .firstName(UPDATED_FIRST_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
@@ -198,7 +198,7 @@ class H1BResourceIT {
         assertThat(h1BList).hasSize(databaseSizeBeforeCreate + 1);
         H1B testH1B = h1BList.get(h1BList.size() - 1);
         assertThat(testH1B.getUserId()).isEqualTo(DEFAULT_USER_ID);
-        assertThat(testH1B.getUsserName()).isEqualTo(DEFAULT_USSER_NAME);
+        assertThat(testH1B.getUserName()).isEqualTo(DEFAULT_USER_NAME);
         assertThat(testH1B.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
         assertThat(testH1B.getMiddleName()).isEqualTo(DEFAULT_MIDDLE_NAME);
         assertThat(testH1B.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
@@ -251,7 +251,7 @@ class H1BResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(h1B.getId().intValue())))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
-            .andExpect(jsonPath("$.[*].usserName").value(hasItem(DEFAULT_USSER_NAME)))
+            .andExpect(jsonPath("$.[*].userName").value(hasItem(DEFAULT_USER_NAME)))
             .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME)))
             .andExpect(jsonPath("$.[*].middleName").value(hasItem(DEFAULT_MIDDLE_NAME)))
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)))
@@ -286,7 +286,7 @@ class H1BResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(h1B.getId().intValue()))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
-            .andExpect(jsonPath("$.usserName").value(DEFAULT_USSER_NAME))
+            .andExpect(jsonPath("$.userName").value(DEFAULT_USER_NAME))
             .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRST_NAME))
             .andExpect(jsonPath("$.middleName").value(DEFAULT_MIDDLE_NAME))
             .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME))
@@ -406,80 +406,80 @@ class H1BResourceIT {
 
     @Test
     @Transactional
-    void getAllH1BSByUsserNameIsEqualToSomething() throws Exception {
+    void getAllH1BSByUserNameIsEqualToSomething() throws Exception {
         // Initialize the database
         h1BRepository.saveAndFlush(h1B);
 
-        // Get all the h1BList where usserName equals to DEFAULT_USSER_NAME
-        defaultH1BShouldBeFound("usserName.equals=" + DEFAULT_USSER_NAME);
+        // Get all the h1BList where userName equals to DEFAULT_USER_NAME
+        defaultH1BShouldBeFound("userName.equals=" + DEFAULT_USER_NAME);
 
-        // Get all the h1BList where usserName equals to UPDATED_USSER_NAME
-        defaultH1BShouldNotBeFound("usserName.equals=" + UPDATED_USSER_NAME);
+        // Get all the h1BList where userName equals to UPDATED_USER_NAME
+        defaultH1BShouldNotBeFound("userName.equals=" + UPDATED_USER_NAME);
     }
 
     @Test
     @Transactional
-    void getAllH1BSByUsserNameIsNotEqualToSomething() throws Exception {
+    void getAllH1BSByUserNameIsNotEqualToSomething() throws Exception {
         // Initialize the database
         h1BRepository.saveAndFlush(h1B);
 
-        // Get all the h1BList where usserName not equals to DEFAULT_USSER_NAME
-        defaultH1BShouldNotBeFound("usserName.notEquals=" + DEFAULT_USSER_NAME);
+        // Get all the h1BList where userName not equals to DEFAULT_USER_NAME
+        defaultH1BShouldNotBeFound("userName.notEquals=" + DEFAULT_USER_NAME);
 
-        // Get all the h1BList where usserName not equals to UPDATED_USSER_NAME
-        defaultH1BShouldBeFound("usserName.notEquals=" + UPDATED_USSER_NAME);
+        // Get all the h1BList where userName not equals to UPDATED_USER_NAME
+        defaultH1BShouldBeFound("userName.notEquals=" + UPDATED_USER_NAME);
     }
 
     @Test
     @Transactional
-    void getAllH1BSByUsserNameIsInShouldWork() throws Exception {
+    void getAllH1BSByUserNameIsInShouldWork() throws Exception {
         // Initialize the database
         h1BRepository.saveAndFlush(h1B);
 
-        // Get all the h1BList where usserName in DEFAULT_USSER_NAME or UPDATED_USSER_NAME
-        defaultH1BShouldBeFound("usserName.in=" + DEFAULT_USSER_NAME + "," + UPDATED_USSER_NAME);
+        // Get all the h1BList where userName in DEFAULT_USER_NAME or UPDATED_USER_NAME
+        defaultH1BShouldBeFound("userName.in=" + DEFAULT_USER_NAME + "," + UPDATED_USER_NAME);
 
-        // Get all the h1BList where usserName equals to UPDATED_USSER_NAME
-        defaultH1BShouldNotBeFound("usserName.in=" + UPDATED_USSER_NAME);
+        // Get all the h1BList where userName equals to UPDATED_USER_NAME
+        defaultH1BShouldNotBeFound("userName.in=" + UPDATED_USER_NAME);
     }
 
     @Test
     @Transactional
-    void getAllH1BSByUsserNameIsNullOrNotNull() throws Exception {
+    void getAllH1BSByUserNameIsNullOrNotNull() throws Exception {
         // Initialize the database
         h1BRepository.saveAndFlush(h1B);
 
-        // Get all the h1BList where usserName is not null
-        defaultH1BShouldBeFound("usserName.specified=true");
+        // Get all the h1BList where userName is not null
+        defaultH1BShouldBeFound("userName.specified=true");
 
-        // Get all the h1BList where usserName is null
-        defaultH1BShouldNotBeFound("usserName.specified=false");
+        // Get all the h1BList where userName is null
+        defaultH1BShouldNotBeFound("userName.specified=false");
     }
 
     @Test
     @Transactional
-    void getAllH1BSByUsserNameContainsSomething() throws Exception {
+    void getAllH1BSByUserNameContainsSomething() throws Exception {
         // Initialize the database
         h1BRepository.saveAndFlush(h1B);
 
-        // Get all the h1BList where usserName contains DEFAULT_USSER_NAME
-        defaultH1BShouldBeFound("usserName.contains=" + DEFAULT_USSER_NAME);
+        // Get all the h1BList where userName contains DEFAULT_USER_NAME
+        defaultH1BShouldBeFound("userName.contains=" + DEFAULT_USER_NAME);
 
-        // Get all the h1BList where usserName contains UPDATED_USSER_NAME
-        defaultH1BShouldNotBeFound("usserName.contains=" + UPDATED_USSER_NAME);
+        // Get all the h1BList where userName contains UPDATED_USER_NAME
+        defaultH1BShouldNotBeFound("userName.contains=" + UPDATED_USER_NAME);
     }
 
     @Test
     @Transactional
-    void getAllH1BSByUsserNameNotContainsSomething() throws Exception {
+    void getAllH1BSByUserNameNotContainsSomething() throws Exception {
         // Initialize the database
         h1BRepository.saveAndFlush(h1B);
 
-        // Get all the h1BList where usserName does not contain DEFAULT_USSER_NAME
-        defaultH1BShouldNotBeFound("usserName.doesNotContain=" + DEFAULT_USSER_NAME);
+        // Get all the h1BList where userName does not contain DEFAULT_USER_NAME
+        defaultH1BShouldNotBeFound("userName.doesNotContain=" + DEFAULT_USER_NAME);
 
-        // Get all the h1BList where usserName does not contain UPDATED_USSER_NAME
-        defaultH1BShouldBeFound("usserName.doesNotContain=" + UPDATED_USSER_NAME);
+        // Get all the h1BList where userName does not contain UPDATED_USER_NAME
+        defaultH1BShouldBeFound("userName.doesNotContain=" + UPDATED_USER_NAME);
     }
 
     @Test
@@ -1740,7 +1740,7 @@ class H1BResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(h1B.getId().intValue())))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
-            .andExpect(jsonPath("$.[*].usserName").value(hasItem(DEFAULT_USSER_NAME)))
+            .andExpect(jsonPath("$.[*].userName").value(hasItem(DEFAULT_USER_NAME)))
             .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME)))
             .andExpect(jsonPath("$.[*].middleName").value(hasItem(DEFAULT_MIDDLE_NAME)))
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)))
@@ -1809,7 +1809,7 @@ class H1BResourceIT {
         em.detach(updatedH1B);
         updatedH1B
             .userId(UPDATED_USER_ID)
-            .usserName(UPDATED_USSER_NAME)
+            .userName(UPDATED_USER_NAME)
             .firstName(UPDATED_FIRST_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
@@ -1843,7 +1843,7 @@ class H1BResourceIT {
         assertThat(h1BList).hasSize(databaseSizeBeforeUpdate);
         H1B testH1B = h1BList.get(h1BList.size() - 1);
         assertThat(testH1B.getUserId()).isEqualTo(UPDATED_USER_ID);
-        assertThat(testH1B.getUsserName()).isEqualTo(UPDATED_USSER_NAME);
+        assertThat(testH1B.getUserName()).isEqualTo(UPDATED_USER_NAME);
         assertThat(testH1B.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
         assertThat(testH1B.getMiddleName()).isEqualTo(UPDATED_MIDDLE_NAME);
         assertThat(testH1B.getLastName()).isEqualTo(UPDATED_LAST_NAME);
@@ -1933,7 +1933,7 @@ class H1BResourceIT {
 
         partialUpdatedH1B
             .userId(UPDATED_USER_ID)
-            .usserName(UPDATED_USSER_NAME)
+            .userName(UPDATED_USER_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
             .category(UPDATED_CATEGORY)
@@ -1956,7 +1956,7 @@ class H1BResourceIT {
         assertThat(h1BList).hasSize(databaseSizeBeforeUpdate);
         H1B testH1B = h1BList.get(h1BList.size() - 1);
         assertThat(testH1B.getUserId()).isEqualTo(UPDATED_USER_ID);
-        assertThat(testH1B.getUsserName()).isEqualTo(UPDATED_USSER_NAME);
+        assertThat(testH1B.getUserName()).isEqualTo(UPDATED_USER_NAME);
         assertThat(testH1B.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
         assertThat(testH1B.getMiddleName()).isEqualTo(UPDATED_MIDDLE_NAME);
         assertThat(testH1B.getLastName()).isEqualTo(UPDATED_LAST_NAME);
@@ -1992,7 +1992,7 @@ class H1BResourceIT {
 
         partialUpdatedH1B
             .userId(UPDATED_USER_ID)
-            .usserName(UPDATED_USSER_NAME)
+            .userName(UPDATED_USER_NAME)
             .firstName(UPDATED_FIRST_NAME)
             .middleName(UPDATED_MIDDLE_NAME)
             .lastName(UPDATED_LAST_NAME)
@@ -2026,7 +2026,7 @@ class H1BResourceIT {
         assertThat(h1BList).hasSize(databaseSizeBeforeUpdate);
         H1B testH1B = h1BList.get(h1BList.size() - 1);
         assertThat(testH1B.getUserId()).isEqualTo(UPDATED_USER_ID);
-        assertThat(testH1B.getUsserName()).isEqualTo(UPDATED_USSER_NAME);
+        assertThat(testH1B.getUserName()).isEqualTo(UPDATED_USER_NAME);
         assertThat(testH1B.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
         assertThat(testH1B.getMiddleName()).isEqualTo(UPDATED_MIDDLE_NAME);
         assertThat(testH1B.getLastName()).isEqualTo(UPDATED_LAST_NAME);

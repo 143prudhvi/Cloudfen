@@ -31,7 +31,7 @@ export class H1BUpdatePage {
 
   idInput = element(by.id('field_id'));
   userIdInput = element(by.id('field_userId'));
-  usserNameInput = element(by.id('field_usserName'));
+  userNameInput = element(by.id('field_userName'));
   firstNameInput = element(by.id('field_firstName'));
   middleNameInput = element(by.id('field_middleName'));
   lastNameInput = element(by.id('field_lastName'));
@@ -72,12 +72,12 @@ export class H1BUpdatePage {
     return await this.userIdInput.getAttribute('value');
   }
 
-  async setUsserNameInput(usserName: string): Promise<void> {
-    await this.usserNameInput.sendKeys(usserName);
+  async setUserNameInput(userName: string): Promise<void> {
+    await this.userNameInput.sendKeys(userName);
   }
 
-  async getUsserNameInput(): Promise<string> {
-    return await this.usserNameInput.getAttribute('value');
+  async getUserNameInput(): Promise<string> {
+    return await this.userNameInput.getAttribute('value');
   }
 
   async setFirstNameInput(firstName: string): Promise<void> {

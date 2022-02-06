@@ -44,7 +44,7 @@ describe('H1B e2e test', () => {
 
     await promise.all([
       h1BUpdatePage.setUserIdInput('userId'),
-      h1BUpdatePage.setUsserNameInput('usserName'),
+      h1BUpdatePage.setUserNameInput('userName'),
       h1BUpdatePage.setFirstNameInput('firstName'),
       h1BUpdatePage.setMiddleNameInput('middleName'),
       h1BUpdatePage.setLastNameInput('lastName'),
