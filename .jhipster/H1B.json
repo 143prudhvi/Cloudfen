@@ -1,0 +1,104 @@
+{
+  "applications": "*",
+  "changelogDate": "20220206173151",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "h_1_b",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "usserName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "countryOfBirth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryOfCitizenShip",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "passportNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "GenderType",
+      "fieldValues": "MALE,FEMALE,OTHERS"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "CategoryType",
+      "fieldValues": "REGULARCAP,MASTERCAP"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currentAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bachelorDegree",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currentVisaStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "passportFrontPage",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "passportBackPage",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "H1B",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,9 @@
+{
+  "cloudfenApp": {
+    "CategoryType": {
+      "null": "",
+      "REGULARCAP": "REGULARCAP",
+      "MASTERCAP": "MASTERCAP"
+    }
+  }
+}

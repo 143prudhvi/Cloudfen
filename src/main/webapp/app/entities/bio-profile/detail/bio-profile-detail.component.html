@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="bioProfile">
+      <h2 data-cy="bioProfileDetailsHeading"><span jhiTranslate="cloudfenApp.bioProfile.detail.title">Bio Profile</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ bioProfile.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.userName">User Name</span></dt>
+        <dd>
+          <span>{{ bioProfile.userName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.userId">User Id</span></dt>
+        <dd>
+          <span>{{ bioProfile.userId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.memberId">Member Id</span></dt>
+        <dd>
+          <span>{{ bioProfile.memberId }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ bioProfile.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ bioProfile.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.dob">Dob</span></dt>
+        <dd>
+          <span>{{ bioProfile.dob }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.gender">Gender</span></dt>
+        <dd>
+          <span>{{ bioProfile.gender }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.imageUrl">Image Url</span></dt>
+        <dd>
+          <span>{{ bioProfile.imageUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.title">Title</span></dt>
+        <dd>
+          <span>{{ bioProfile.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudfenApp.bioProfile.summary">Summary</span></dt>
+        <dd>
+          <span>{{ bioProfile.summary }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bio-profile', bioProfile.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

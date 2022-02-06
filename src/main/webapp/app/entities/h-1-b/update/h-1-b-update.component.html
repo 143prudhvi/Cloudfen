@@ -1,0 +1,237 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-h-1-b-heading" data-cy="H1BCreateUpdateHeading" jhiTranslate="cloudfenApp.h1B.home.createOrEditLabel">
+        Create or edit a H 1 B
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.userId" for="field_userId">User Id</label>
+          <input type="text" class="form-control" name="userId" id="field_userId" data-cy="userId" formControlName="userId" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.usserName" for="field_usserName">Usser Name</label>
+          <input type="text" class="form-control" name="usserName" id="field_usserName" data-cy="usserName" formControlName="usserName" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.firstName" for="field_firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.middleName" for="field_middleName">Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="middleName"
+            id="field_middleName"
+            data-cy="middleName"
+            formControlName="middleName"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.lastName" for="field_lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
+          <div class="d-flex">
+            <input
+              id="field_dateOfBirth"
+              data-cy="dateOfBirth"
+              type="datetime-local"
+              class="form-control"
+              name="dateOfBirth"
+              formControlName="dateOfBirth"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.countryOfBirth" for="field_countryOfBirth"
+            >Country Of Birth</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryOfBirth"
+            id="field_countryOfBirth"
+            data-cy="countryOfBirth"
+            formControlName="countryOfBirth"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.countryOfCitizenShip" for="field_countryOfCitizenShip"
+            >Country Of Citizen Ship</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryOfCitizenShip"
+            id="field_countryOfCitizenShip"
+            data-cy="countryOfCitizenShip"
+            formControlName="countryOfCitizenShip"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.passportNumber" for="field_passportNumber">Passport Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="passportNumber"
+            id="field_passportNumber"
+            data-cy="passportNumber"
+            formControlName="passportNumber"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.gender" for="field_gender">Gender</label>
+          <select class="form-control" name="gender" formControlName="gender" id="field_gender" data-cy="gender">
+            <option [ngValue]="null">{{ 'cloudfenApp.GenderType.null' | translate }}</option>
+            <option *ngFor="let genderType of genderTypeValues" [value]="genderType">
+              {{ 'cloudfenApp.GenderType.' + genderType | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.category" for="field_category">Category</label>
+          <select class="form-control" name="category" formControlName="category" id="field_category" data-cy="category">
+            <option [ngValue]="null">{{ 'cloudfenApp.CategoryType.null' | translate }}</option>
+            <option *ngFor="let categoryType of categoryTypeValues" [value]="categoryType">
+              {{ 'cloudfenApp.CategoryType.' + categoryType | translate }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.email" for="field_email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.currentAddress" for="field_currentAddress">Current Address</label>
+          <input
+            type="text"
+            class="form-control"
+            name="currentAddress"
+            id="field_currentAddress"
+            data-cy="currentAddress"
+            formControlName="currentAddress"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.phoneNumber" for="field_phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="phoneNumber"
+            id="field_phoneNumber"
+            data-cy="phoneNumber"
+            formControlName="phoneNumber"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.bachelorDegree" for="field_bachelorDegree">Bachelor Degree</label>
+          <input
+            type="text"
+            class="form-control"
+            name="bachelorDegree"
+            id="field_bachelorDegree"
+            data-cy="bachelorDegree"
+            formControlName="bachelorDegree"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.year" for="field_year">Year</label>
+          <input type="text" class="form-control" name="year" id="field_year" data-cy="year" formControlName="year" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.currentVisaStatus" for="field_currentVisaStatus"
+            >Current Visa Status</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="currentVisaStatus"
+            id="field_currentVisaStatus"
+            data-cy="currentVisaStatus"
+            formControlName="currentVisaStatus"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.status" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.referedBy" for="field_referedBy">Refered By</label>
+          <input type="text" class="form-control" name="referedBy" id="field_referedBy" data-cy="referedBy" formControlName="referedBy" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.passportFrontPage" for="field_passportFrontPage"
+            >Passport Front Page</label
+          >
+          <textarea
+            class="form-control"
+            name="passportFrontPage"
+            id="field_passportFrontPage"
+            data-cy="passportFrontPage"
+            formControlName="passportFrontPage"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cloudfenApp.h1B.passportBackPage" for="field_passportBackPage"
+            >Passport Back Page</label
+          >
+          <textarea
+            class="form-control"
+            name="passportBackPage"
+            id="field_passportBackPage"
+            data-cy="passportBackPage"
+            formControlName="passportBackPage"
+          ></textarea>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
